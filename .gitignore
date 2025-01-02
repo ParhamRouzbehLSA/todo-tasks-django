@@ -1,0 +1,13 @@
+# Ignore database
+*.sqlite3
+
+# Ignore migrations
+*/migrations/
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore environment files
+.env
+venv/
