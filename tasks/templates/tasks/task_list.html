@@ -1,0 +1,49 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Your Tasks</h1>
+
+    <!-- فرم logout -->
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong><br>
+                <p>{{ task.description }}</p>
+                <p>Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
+                <a href="{% url 'edit_task' task.id %}">Edit</a> |
+                <a href="{% url 'delete_task' task.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No tasks found.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_task' %}">Add New Task</a>
+</body>
+{% endblock %}
+
+
+
+
+
+
+
+<h1>Task List</h1>
+<ul class="list-group">
+    {% for task in tasks %}
+        <li class="list-group-item">
+            {{ task.name }}
+            <a href="{% url 'edit_task' task.id %}" class="btn btn-warning btn-sm float-end mx-1">Edit</a>
+            <a href="{% url 'delete_task' task.id %}" class="btn btn-danger btn-sm float-end">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
