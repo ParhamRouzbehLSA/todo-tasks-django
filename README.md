@@ -9,15 +9,15 @@ A simple Todo tasks manager built with Django.
 
 ## Installation
 1. Clone the repository:
-![img_3.png](img_3.png)
+git clone https://github.com/ParhamRouzbehLSA/todo-tasks-django.git
 2. Navigate to the project folder:
-![img_4.png](img_4.png)
+cd task-manager-django
 3. Create and activate a virtual environment:
-![img_5.png](img_5.png)
+python -m venv venv source venv/bin/activate # On Windows: venv\Scripts\activate
 4. Install dependencies:
-![img_6.png](img_6.png)
+pip install -r requirements.txt
 5. Run the server:
-![img_7.png](img_7.png)
+python manage.py runserver
 
 ## License
 This project is open-source under the MIT License.
